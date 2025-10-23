@@ -1,0 +1,11 @@
+PROJECT_ID=your-project-id
+REGION=asia-south1
+CLUSTER=gke-monitoring
+
+gcloud container clusters create $CLUSTER \
+  --region $REGION \
+  --project $PROJECT_ID \
+  --num-nodes=3 \
+  --machine-type=e2-medium \
+  --enable-ip-alias \
+  --workload-pool=${PROJECT_ID}.svc.id.goog
